@@ -1,4 +1,4 @@
-// Problem Link: https://codeforces.com/problemset/problem/1607/B
+// Problem Link: https://codeforces.com/problemset/problem/1440/B
 
 /*
 **************************************************************
@@ -24,11 +24,26 @@ using namespace std;
 
 void solve()
 {
-    ll x,n;cin>>x>>n;
-    ll dir[4]={0,n,-1,-n-1};
-    ll d=dir[n%4];
-    cout<<x+(x%2?d:-d)<<endl;
+    int n,k;cin>>n>>k;int arr[n*k];for(auto &c:arr)cin>>c;
+    ll ans =0,j=n*k-(n/2+1);
+    
+    for (int i=0;i<k;i++) {
+        ans+=arr[j];
+        j-=n/2+1;
+    }
 
+    cout<<ans<<endl;
+
+    /*
+     int n,k;cin>>n>>k;int arr[n*k];for(auto &c:arr)cin>>c;
+    ll ans=0,j=n/2;
+    reverse(arr,arr+(n*k));
+    for (int i=0;i<k;i++) {
+        ans+=arr[j];
+        j+=n/2+1;
+    }
+    cout<<ans<<endl;
+    */
 }
 /*mdmahabub55*/
 int main()
@@ -47,4 +62,3 @@ int main()
     }
     return Allhamdulillah;
 }
-

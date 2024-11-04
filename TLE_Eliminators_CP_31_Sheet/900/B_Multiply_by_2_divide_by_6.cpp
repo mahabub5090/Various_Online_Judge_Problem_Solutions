@@ -1,4 +1,4 @@
-// Problem Link: https://codeforces.com/problemset/problem/1607/B
+// Problem Link: https://codeforces.com/problemset/problem/1374/B
 
 /*
 **************************************************************
@@ -24,11 +24,18 @@ using namespace std;
 
 void solve()
 {
-    ll x,n;cin>>x>>n;
-    ll dir[4]={0,n,-1,-n-1};
-    ll d=dir[n%4];
-    cout<<x+(x%2?d:-d)<<endl;
-
+    ll n;cin>>n;
+    int op=0;
+    while(n!=1){
+        if(n%6==0)n/=6;
+        else n*=2;
+        op++;
+        if(op>=1000){
+            cout<<-1<<endl;return;
+        }
+    }
+    cout<<op<<endl;
+    
 }
 /*mdmahabub55*/
 int main()
@@ -47,4 +54,3 @@ int main()
     }
     return Allhamdulillah;
 }
-

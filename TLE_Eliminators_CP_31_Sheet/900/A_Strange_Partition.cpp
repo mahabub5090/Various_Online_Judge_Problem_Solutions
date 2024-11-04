@@ -1,4 +1,4 @@
-// Problem Link: https://codeforces.com/problemset/problem/1607/B
+// Problem Link: https://codeforces.com/problemset/problem/1471/A
 
 /*
 **************************************************************
@@ -24,11 +24,13 @@ using namespace std;
 
 void solve()
 {
-    ll x,n;cin>>x>>n;
-    ll dir[4]={0,n,-1,-n-1};
-    ll d=dir[n%4];
-    cout<<x+(x%2?d:-d)<<endl;
-
+    ll n,x;cin>>n>>x;
+    ll arr[n]; for(auto &c:arr)cin>>c;
+    ll sum=0;
+    for(auto &c:arr)sum+=c;
+    ll ans=sum/x+(sum%x?1:0),ans2=0;
+    for(auto &c:arr)ans2+=ceil(c*1.0*1ll/x);
+    cout<<ans<<" "<<ans2<<endl;
 }
 /*mdmahabub55*/
 int main()
@@ -47,4 +49,3 @@ int main()
     }
     return Allhamdulillah;
 }
-

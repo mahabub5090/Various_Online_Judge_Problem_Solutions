@@ -25,24 +25,20 @@ using namespace std;
 void solve()
 {
     string s,t;cin>>s>>t;
-    if(s.size()<t.size())no;
-    else{
-        int j=t.size();
-        for(int i=s.size()-1;i>=0;i--){
-            if(s[i]!=t[j])s[i]='0';
-            else if(j) j--;
-            else break;
-        }
-        string cmp="";
-        for(auto &c:s)if(c!='0')cmp+=c;
-        j=t.size();int i=cmp.size()-1,cnt=0;
-        while(j>=0){
-            if(t[j]!=s[i])i--;else j--,cnt++;
-            if(i<0)break;
-        }
-        cout<<(cnt==t.size()?"YES":"NO")<<Endl;
-
+    if(s.size()<t.size()){no;return;}
+    map<char,int>mp,mp2;
+    int i=s.size()-1,j=t.size()-1;
+    while(j>=0){
+        if(s[i]==t[j] && mp[s[i]]==mp2[s[i]]){i--,j--;continue;}
+        while(i>=0 && t[j]!=s[i])mp[s[i--]]++;
+        if(s[i]==t[j] && mp[s[i]]==mp2[s[i]]){i--,j--;continue;}
+        if(mp[t[j]]!=mp2[t[j]]){no;return;}
+        mp2[t[j]]++;
+        if(i<0 && j>=0){no;return;}
+        j--;
+ 
     }
+    yes;
 }
 /*mdmahabub55*/
 int main()

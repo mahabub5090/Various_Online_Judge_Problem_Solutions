@@ -1,4 +1,4 @@
-// Problem Link: https://codeforces.com/problemset/problem/1607/B
+// Problem Link: https://codeforces.com/problemset/problem/1869/A
 
 /*
 **************************************************************
@@ -22,13 +22,23 @@ using namespace std;
 #define yes cout << "YES\n"
 #define no cout << "NO\n"
 
+// Accepted;
+
 void solve()
 {
-    ll x,n;cin>>x>>n;
-    ll dir[4]={0,n,-1,-n-1};
-    ll d=dir[n%4];
-    cout<<x+(x%2?d:-d)<<endl;
-
+    int n;cin>>n;int a[n];for(auto &c:a)cin>>c;
+    if(n%2==0){
+        cout<<2<<endl;
+        cout<<1<<" "<<n<<endl;
+        cout<<1<<" "<<n<<endl;
+    }
+    else{
+         cout<<4<<endl;
+         cout<<1<<" "<<n-1<<endl;
+         cout<<1<<" "<<n-1<<endl;
+         cout<<n-1<<" "<<n<<endl;
+         cout<<n-1<<" "<<n<<endl;
+    }
 }
 /*mdmahabub55*/
 int main()
@@ -47,4 +57,3 @@ int main()
     }
     return Allhamdulillah;
 }
-

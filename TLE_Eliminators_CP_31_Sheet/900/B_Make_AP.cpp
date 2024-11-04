@@ -1,4 +1,4 @@
-// Problem Link: https://codeforces.com/problemset/problem/1607/B
+// Problem Link: https://codeforces.com/problemset/problem/1624/B
 
 /*
 **************************************************************
@@ -24,11 +24,15 @@ using namespace std;
 
 void solve()
 {
-    ll x,n;cin>>x>>n;
-    ll dir[4]={0,n,-1,-n-1};
-    ll d=dir[n%4];
-    cout<<x+(x%2?d:-d)<<endl;
-
+    int a,b,c;
+    cin>>a>>b>>c;
+    int m=2*b-c;
+    if(m%a==0 && m/a>0){yes;return;}
+    m=(c+a);
+    if(m%(2*b)==0){yes;return;}
+    m=2*b-a;
+    if(m%c==0 && m/c>0){yes;return;}
+    no;
 }
 /*mdmahabub55*/
 int main()
@@ -47,4 +51,3 @@ int main()
     }
     return Allhamdulillah;
 }
-

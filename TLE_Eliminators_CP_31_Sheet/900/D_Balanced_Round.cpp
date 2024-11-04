@@ -1,4 +1,4 @@
-// Problem Link: https://codeforces.com/problemset/problem/1607/B
+// Problem Link: https://codeforces.com/contest/1850/problem/D
 
 /*
 **************************************************************
@@ -24,10 +24,15 @@ using namespace std;
 
 void solve()
 {
-    ll x,n;cin>>x>>n;
-    ll dir[4]={0,n,-1,-n-1};
-    ll d=dir[n%4];
-    cout<<x+(x%2?d:-d)<<endl;
+    int n,k;cin>>n>>k;int arr[n];for(auto &c:arr)cin>>c;
+    sort(arr,arr+n);
+    int cnt=1,tt=1;
+    for(int i=0;i<n-1;i++){
+        if(arr[i+1]-arr[i]>k)cnt=1;
+        else cnt++;
+        tt=max(tt,cnt);
+    }
+    cout<<n-tt<<endl;
 
 }
 /*mdmahabub55*/
@@ -47,4 +52,3 @@ int main()
     }
     return Allhamdulillah;
 }
-

@@ -1,4 +1,4 @@
-// Problem Link: https://codeforces.com/problemset/problem/1607/B
+// Problem Link: https://codeforces.com/problemset/problem/1582/B
 
 /*
 **************************************************************
@@ -24,11 +24,14 @@ using namespace std;
 
 void solve()
 {
-    ll x,n;cin>>x>>n;
-    ll dir[4]={0,n,-1,-n-1};
-    ll d=dir[n%4];
-    cout<<x+(x%2?d:-d)<<endl;
-
+    ll n;cin>>n;ll arr[n];for(auto &c:arr)cin>>c;
+    ll zero=0,one=0;
+    for(auto &c:arr){
+        if(c==0)zero++;
+        if(c==1)one++;
+    }
+    ll ans=pow(2,zero)*one;
+    cout<<1ll*pow(2,zero)*one<<endl;
 }
 /*mdmahabub55*/
 int main()
@@ -47,4 +50,3 @@ int main()
     }
     return Allhamdulillah;
 }
-

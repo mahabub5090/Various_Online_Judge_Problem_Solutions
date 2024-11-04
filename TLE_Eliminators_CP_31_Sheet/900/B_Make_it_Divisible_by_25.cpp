@@ -1,4 +1,4 @@
-// Problem Link: https://codeforces.com/problemset/problem/1607/B
+// Problem Link:https://codeforces.com/problemset/problem/1593/B
 
 /*
 **************************************************************
@@ -22,13 +22,22 @@ using namespace std;
 #define yes cout << "YES\n"
 #define no cout << "NO\n"
 
+int res(string c,string s){
+    int n=s.size()-1,cnt=0;
+    while(n>=0 && s[n]!=c[1])cnt++,n--;
+    n-=1;
+    while(n>=0 && s[n]!=c[0])cnt++,n--;
+    return cnt;
+}
 void solve()
 {
-    ll x,n;cin>>x>>n;
-    ll dir[4]={0,n,-1,-n-1};
-    ll d=dir[n%4];
-    cout<<x+(x%2?d:-d)<<endl;
-
+    string s;cin>>s;
+    vector<string>vc={"00","25","50","75"};
+    int ans=INT_MAX;
+    for(auto &c:vc){
+        ans=min(ans,res(c,s));
+    }
+    cout<<ans<<endl;
 }
 /*mdmahabub55*/
 int main()
@@ -47,4 +56,3 @@ int main()
     }
     return Allhamdulillah;
 }
-
